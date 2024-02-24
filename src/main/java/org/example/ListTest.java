@@ -1,9 +1,6 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Collection;
+import java.util.*;
 
 public class ListTest {
     public static void main(String[] args) {
@@ -61,8 +58,32 @@ public class ListTest {
         stringList.add("grapes");
         System.out.println("stringList : " + stringList);
         
-        // 오름차순 정렬 처리
-        // Collection 인터페이스가 아닌 Collections 클래스 사용
+        /** 오름차순 정렬 처리
+         *  Collection 인터페이스가 아닌 Collections 클래스 사용
+         *  Collections 클래스: Collection 인터페이스에서 사용되는 기능들을 static 메소드로 구현한 클래스
+         *  sort 메소드를 사용 시 오름차순 정렬 후 정렬상태 유지
+        */
+        Collections.sort(stringList);
+        System.out.println("stringListSort : " + stringList);
+
+        /** 내림차순 정렬 처리
+         *  ArrayList -> LinkedList로 변환하여 내림차순 메소드 descendingIterator() 적용
+         *  Iterator 타입 목록으로 반환
+         */
+        /** Iterator 반복자 인터페이스
+         *  컬렉션에서 값을 읽어오는 방식을 통일하기 위해 사용
+         *  Collection 인터페이스의 iterator() 메소드
+         *  반복문을 이용해 목록을 하나씩 꺼내는 방식으로 사용
+         *  hasNext() : 다음 요소를 가지고 있는 경우 true, 없는 경우 false 반환
+         *  next() : 현재 반복자가 가리키는 요소를 반환하고, 다음 요소로 반복자를 이동시킴
+         *  */
+        stringList = new LinkedList<>(stringList);
+        Iterator<String> dIter = ((LinkedList<String>) stringList).descendingIterator();
+        List<String> descList = new ArrayList<>();
+        while (dIter.hasNext()) {
+            descList.add(dIter.next());
+        }
+        System.out.println("descList : " + descList);
 
     }
 }
