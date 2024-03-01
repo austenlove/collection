@@ -1,13 +1,14 @@
-package org.example;
+package org.example.arraylist;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 public class BookListMain {
 
     public static void main(String[] args) {
+
+        // ArrayList 용법과 정렬
 
         // 책 목록 관리용 ArrayList 인스턴스 생성
         List<BookDTO> bookList = new ArrayList<>();

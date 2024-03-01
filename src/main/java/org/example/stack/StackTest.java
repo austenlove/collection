@@ -1,4 +1,4 @@
-package org.example;
+package org.example.stack;
 
 import java.util.Stack;
 
@@ -11,7 +11,7 @@ public class StackTest {
 
         Stack<Integer> integerStack = new Stack<>();
 
-        // 값을 넣을 때는 push 메소드 사용(Vector)
+        // 값을 넣을 때는 push() 사용
         integerStack.push(1);
         integerStack.push(2);
         integerStack.push(3);
@@ -25,9 +25,12 @@ public class StackTest {
         // 스택의 맨 위부터 아래로 순차적으로 요소 탐색, 해당 요소가 스택 몇 번째 위치에 있는지 반환
         System.out.println(integerStack.search(5));
 
-        // 값을 꺼낼 때는 peek()과 pop() 사용
-        // peek() : 스택 가장 마지막에 있는(상단에 있는) 요소 반환
-        // pop() : 스택 가장 마지막에 있는(상단에 있는) 요소 반환 후 제거
+
+        /** 값을 꺼낼 때는 peek()과 pop() 사용
+         *  peek() : 스택 가장 마지막에 있는(상단에 있는) 요소 반환
+         *  pop() : 스택 가장 마지막에 있는(상단에 있는) 요소 반환 후 제거
+         */
+
         System.out.println("peek : " + integerStack.peek());
         System.out.println(integerStack);
 
