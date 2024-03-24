@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:src/main/java/org/example/arraylist/BookListMain.java
 package org.example.arraylist;
-========
-package org.example.book;
->>>>>>>> ac0478e ([Collections] ArrayList 예시 디렉토리 refactor):src/main/java/org/example/book/BookListMain.java
 
 import java.util.ArrayList;
 import java.util.Comparator;
