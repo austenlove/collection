@@ -1,4 +1,10 @@
+<<<<<<<< HEAD:src/main/java/org/example/arraylist/AscendingPrice.java
 package org.example.arraylist;
+========
+package org.example.book;
+
+import org.example.book.BookDTO;
+>>>>>>>> ac0478e ([Collections] ArrayList 예시 디렉토리 refactor):src/main/java/org/example/book/AscendingPrice.java
 
 import java.util.Comparator;
 
