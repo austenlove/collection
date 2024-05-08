@@ -1,4 +1,4 @@
-package org.example.set.hashset;
+package org.example.set;
 
 import java.util.Iterator;
 import java.util.Set;
