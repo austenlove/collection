@@ -1,5 +1,6 @@
 package org.example;
 
+import java.io.*;
 import java.util.Properties;
 
 public class PropertiesTest {
@@ -24,6 +25,36 @@ public class PropertiesTest {
 
         System.out.println(prop);
 
-//        try {prop} catch () {}
+        try {
+            prop.store(new FileOutputStream("driver.dat"), "jdbc.driver");
+            prop.store(new FileWriter("driver.txt"), "jdbc driver");
+            prop.storeToXML(new FileOutputStream("driver.xml"), "jdbc driver");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        // 파일로부터 읽어와서 Properties에 기록
+        Properties prop2 = new Properties();
+
+        try {
+            prop2.load(new FileInputStream("driver.dat"));
+            prop2.load(new FileReader("driver.txt"));
+
+            prop2.loadFromXML(new FileInputStream("driver.xml"));
+
+            // Properties의 모든 key값 목록을 대상 스트림에 내보내기
+            prop2.list(System.out);
+
+            System.out.println(prop.getProperty("driver"));
+            System.out.println(prop.getProperty("url"));
+            System.out.println(prop.getProperty("user"));
+            System.out.println(prop.getProperty("password"));
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
