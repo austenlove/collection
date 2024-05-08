@@ -10,6 +10,7 @@ public class HashMapTest {
      * */
 
     public static void main(String[] args) {
+
         /** HashMap : key-value 쌍으로 데이터를 저장하며 다양한 value를 가지지만 key는 중복 불가
          *  저장은 느린 편
          *  해시 함수를 이용해 데이터를 해시 테이블에 저장하므로 검색 측면에서 뛰어남
@@ -72,16 +73,27 @@ public class HashMapTest {
         /** 2. 저장된 value 값들을 collection으로 만들기 */
         Collection<String> values = hmap2.values();
 
-        // Iterator()로 목록 만들기
+        // 2-1. Iterator()로 목록 만들기
         Iterator<String> valueIter = values.iterator();
         while(valueIter.hasNext()) {
             System.out.println(valueIter.next());
         }
 
-        // 배열로 만들기
+        // 2-2. 배열로 만들기
         Object[] valueArr = values.toArray();
         for(int i=0; i<valueArr.length; i++) {
             System.out.println(i + " : " + valueArr[i]);
         }
+
+
+        /** 3. Map의 내부 클래스 EntrySet 이용해  key-value 목록 만들기 : entrySet() */
+        Set<Map.Entry<String, String>> set = hmap2.entrySet();   // Entry: key-value 객체를 쌍으로 묶은 것
+        Iterator<Map.Entry<String, String>> entryIter = set.iterator();
+
+        while (entryIter.hasNext()) {
+            Map.Entry<String, String> entry = entryIter.next();
+            System.out.println(entry.getKey() + " : " + entry.getValue());
+        }
+
     }
 }
